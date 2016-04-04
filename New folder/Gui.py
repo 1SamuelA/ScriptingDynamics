@@ -69,11 +69,41 @@ class GUI_Flocking(object):
         self.SeparationBias = cmds.floatSliderGrp(l='Separation Agents', f = True, min=0, max=2, fieldMinValue=0.0, fieldMaxValue=2.0, value=0.006 )
         
         cmds.setParent(self.mainForm)
-
+        
+        cmds.button(label="Simulate", command=self.StartSimulation)
+        
         # show the window
         cmds.showWindow(self.window)
         # force window size
         cmds.window(self.window, e=True, wh=self.size)
+    
+    def StartSimulation(self, *args):
+        Rules = []
+        Rules.append(cmds.checkBox(self.buttonSeparation, query=True, value=True))
+        Rules.append(cmds.checkBox(self.buttonAlignment, query=True, value=True))
+        Rules.append(cmds.checkBox(self.buttonCohesion, query=True, value=True))
+        Rules.append(cmds.checkBox(self.buttonLimitSpeed, query=True, value=True))
+        Rules.append(cmds.checkBox(self.buttonOutofBounds, query=True, value=True))
+        Rules.append(cmds.checkBox(self.buttonWind, query=True, value=True))
+        Rules.append(cmds.checkBox(self.buttonGoals, query=True, value=True))
+        Rules.append(cmds.checkBox(self.buttonFleeTarget, query=True, value=True))
+        
+        print Rules
 	
 GUI = GUI_Flocking
 GUI.showUI()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
