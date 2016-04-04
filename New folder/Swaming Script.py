@@ -16,6 +16,14 @@ import math
 last_frame_number = 1
 agent0_name = "pCone1"
 
+# Agent Class
+# - name
+# - Position vector
+# - Velocity
+# - Max Speed
+# - Turning Speed
+# - State: Fleeing 
+
 # this function is used to initialise the simulation
 def init():
 	print "Custom simulation initialised"
